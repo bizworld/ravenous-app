@@ -1,5 +1,5 @@
 import React from 'react'; // import the React library, to build the component, using React.
-import './Business.css'; // import Business.css (from the same parent directory).
+import './Business.css'; // import Business.css (in the same parent directory).
 
 const business = {
   imageSrc: 'https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg',
