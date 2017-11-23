@@ -1,5 +1,5 @@
 import React from 'react'; // import the React library, to build the component, using React.
-import './Business.css'; // import Business.css (from the same parent directory). 
+import './Business.css'; // import Business.css (from the same parent directory).
 
 const business = {
   imageSrc: 'https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg',
@@ -39,3 +39,7 @@ class Business extends React.Component {
     );
   }
 }
+
+/* Using `default export`, export the Business component class to
+(expose it i.e.) make it available to the rest of the Ravenous app. */
+export default Business;
