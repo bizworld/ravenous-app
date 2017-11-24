@@ -22,3 +22,8 @@ class BusinessList extends React.Component {
     );
   }
 }
+
+/* The BusinessList component class (that produces the list component,
+<BusinessList /> component) will need to be rendered again by another component.
+Hence, it is exported. */
+export default BusinessList;
