@@ -15,3 +15,8 @@ const sortByOptions = {
   'Highest Rated': 'rating',
   'Most Reviewed': 'review_count'
 };
+
+// Use the React library to create a component class, SearchBar
+class SearchBar extends React.Component {
+
+}
