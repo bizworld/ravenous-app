@@ -10,6 +10,15 @@ Create the BusinessList component class (that will produce the <BusinessList />
 component). */
 class BusinessList extends React.Component {
   render() {
-    
+    return (
+      <div className="BusinessList">
+        <Business /> <!-- Add Business components -->
+        <Business />
+        <Business />
+        <Business />
+        <Business />
+        <Business />
+      </div>
+    );
   }
 }
