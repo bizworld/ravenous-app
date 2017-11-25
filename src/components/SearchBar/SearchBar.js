@@ -16,7 +16,16 @@ const sortByOptions = {
   'Most Reviewed': 'review_count'
 };
 
-// Use the React library to create a component class, SearchBar
+/* Use the React library to create a component class, SearchBar, with a
+renderSortByOptions() method.
+The purpose of renderSortByOptions() is to dynamically create the list items
+needed to display the sort options (Best Match, Highest Rated, Most Reviewed).
+This is to help future proof against potential changes to the Yelp API. */
 class SearchBar extends React.Component {
-
+  renderSortByOptions() {
+    return Object.keys(sortByOptions).map(sortByOption => {
+      let sortByOptionValue = sortByOptions[sortByOption];
+      return <li key={sortByOptionValue}>{sortByOption}</li>;
+    });
+  }
 }
