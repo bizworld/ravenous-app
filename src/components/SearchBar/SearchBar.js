@@ -42,10 +42,14 @@ class SearchBar extends React.Component {
           <input placeholder="Where?" />
         </div>
         <div className="SearchBar-submit">
-          <a>Let's Go</a>
+          //<a>Let's Go</a>
         </div>
       </div>
     );
   }
 
 }
+
+/* This list component, SearchBar, will need to be rendered again by another
+component, so you'll need to export it. */
+export default SearchBar;
