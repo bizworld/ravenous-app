@@ -8,7 +8,7 @@ class App extends Component {
   render() {
     // We won't need the default App component, so we'll make some modifications
     return (
-      div className="App">
+      <div className="App">
         <h1>ravenous</h1>
         <SearchBar />
         <BusinessList />
