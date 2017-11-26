@@ -12,7 +12,7 @@ class BusinessList extends React.Component {
   render() {
     return (
       <div className="BusinessList">
-        <Business /> <!-- Add Business components -->
+        <Business /> {/* Add Business components */}
         <Business />
         <Business />
         <Business />

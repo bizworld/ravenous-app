@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import 'components/SearchBar/SearchBar.js';
-import 'components/BusinessList/BusinessList.js';
+import SearchBar from './components/SearchBar/SearchBar.js';
+import BusinessList from './components/BusinessList/BusinessList.js';
 
 class App extends Component {
   render() {
@@ -10,8 +10,8 @@ class App extends Component {
     return (
       <div className="App">
         <h1>ravenous</h1>
-        <SearchBar />
-        <BusinessList />
+        <SearchBar/>
+        <BusinessList/>
       </div>
     );
   }
