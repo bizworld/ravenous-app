@@ -10,14 +10,14 @@ Create the BusinessList component class (that will produce the <BusinessList />
 component). */
 class BusinessList extends React.Component {
   render() {
+    /* the businesses prop (set in the BusinessList component, in App.js),
+    should have the functionality of iterating through the businesses array. */
     return (
       <div className="BusinessList">
-        <Business /> {/* Add Business components */}
-        <Business />
-        <Business />
-        <Business />
-        <Business />
-        <Business />
+        {this.props.businesses.map(business => {
+          return <Business business={business} />;
+        })
+      }
       </div>
     );
   }
