@@ -33,11 +33,13 @@ const businesses = [
 class App extends Component {
   render() {
     // We won't need the default App component, so we'll make some modifications
+    /* Add a businesses property to the <BusinessList /> component inside of
+    the render() method (with the prop value as the businesses array). */
     return (
       <div className="App">
         <h1>ravenous</h1>
         <SearchBar />
-        <BusinessList />
+        <BusinessList businesses={businesses} />
       </div>
     );
   }
