@@ -10,8 +10,8 @@ class App extends Component {
     return (
       <div className="App">
         <h1>ravenous</h1>
-        <SearchBar/>
-        <BusinessList/>
+        <SearchBar />
+        <BusinessList />
       </div>
     );
   }
@@ -19,5 +19,5 @@ class App extends Component {
 
 /* default export at the bottom of the file (instead of named export in the
 class declaration) to be consistent across with how components are exported in
-the Ravenous project. */ 
+the Ravenous project. */
 export default App;
