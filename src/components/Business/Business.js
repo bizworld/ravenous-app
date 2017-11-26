@@ -1,18 +1,6 @@
 import React from 'react'; // import the React library, to build the component, using React.
 import './Business.css'; // import Business.css (in the same parent directory).
 
-const business = {
-  imageSrc: 'https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg',
-  name: 'MarginOtto Pizzeria',
-  address: '1010 Paddington Way',
-  city: 'Flavortown',
-  state: 'NY',
-  zipCode: '10101',
-  category: 'Italian',
-  rating: 4.5,
-  reviewCount: 90
-};
-
 /* Create a Business component class (to produce a React component, Business)
 Using `className` for JSX elements (as opposed to `class` for HTML elements). */
 class Business extends React.Component {
