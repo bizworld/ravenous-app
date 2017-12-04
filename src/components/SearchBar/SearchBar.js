@@ -18,7 +18,8 @@ const sortByOptions = {
 
 /* Create a method that returns the current CSS class of the sort options,
 returning whether or not each one should be styled as if it has been selected.
-i.e. getSortByClass() returns the current CSS class for a sorting option. */
+i.e. getSortByClass() returns the current CSS class for a sorting option.
+It will be useful in providing visual feedback to users of Ravenous. */
 function getSortByClass(sortByOption) {
   if(this.state.sortBy === sortByOption) { // sortByOption or this.sortByOption ?
     return 'active';
@@ -42,6 +43,15 @@ class SearchBar extends React.Component {
       location: '', // the location to search near from the location input
       sortBy: 'best_match' // represents the selected sorting option to use.
     };
+  }
+
+  /* A method that sets the state of a sorting option. This method will be
+  useful when communicating with the Yelp API in the future. */
+  handleSortByChange(sortByOption) {
+    // update the state by calling .setState()
+    this.setState({
+      sortBy: sortByOption
+    });
   }
 
   renderSortByOptions() {
