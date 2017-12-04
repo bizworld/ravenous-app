@@ -45,6 +45,25 @@ class SearchBar extends React.Component {
     });
   }
 
+  /* Ravenous will also need to handle changes in the two input elements.
+  Specifically, it will need to handle changes in "Terms" (businesses) and
+  "Location" (location to search in).
+  Since both will be related to events being triggered, they both accept event
+  (event object) as an argument. */
+  handleTermChange(event) {
+    // update the state
+    this.setState({
+      // extract the needed value from the event object and set as term's new value
+      term: event.target.value
+    });
+  }
+
+  handleLocationChange(event) {
+    this.setState({
+      location: event.target.value
+    });
+  }
+
   /* Create a method that returns the current CSS class of the sort options,
   returning whether or not each one should be styled as if it has been selected.
   i.e. getSortByClass() returns the current CSS class for a sorting option.
