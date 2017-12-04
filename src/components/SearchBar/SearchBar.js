@@ -16,6 +16,17 @@ const sortByOptions = {
   'Most Reviewed': 'review_count'
 };
 
+/* Create a method that returns the current CSS class of the sort options,
+returning whether or not each one should be styled as if it has been selected.
+i.e. getSortByClass() returns the current CSS class for a sorting option. */
+function getSortByClass(sortByOption) {
+  if(this.state.sortBy === sortByOption) { // sortByOption or this.sortByOption ?
+    return 'active';
+  } else {
+    return ''; // otherwise, return an empty string
+  }
+}
+
 /* Use the React library to create a component class, SearchBar, with a
 renderSortByOptions() method.
 The purpose of renderSortByOptions() is to dynamically create the list items
