@@ -61,9 +61,15 @@ class SearchBar extends React.Component {
     return Object.keys(sortByOptions).map(sortByOption => {
       let sortByOptionValue = sortByOptions[sortByOption];
       /* The value of the `className` attribute will conditionally style each sort
-      by option, displaying to the user which sorting option is currently selected. */
+      by option, displaying to the user which sorting option is currently selected.
+      the onClick attribute updates the state of a sorting option when it is clicked.
+      This will allow us to both bind to the current value of this (as we usually
+      do in the constructor()) but also bind the current sortByOptionValue as the
+      first argument to the method call, ensuring the method is called with the
+      appropriate value when clicked. */
       return <li className={this.getSortByClass(sortByOptionValue)}
-        key={sortByOptionValue}>{sortByOption}</li>;
+                onClick={this.handleSortByChange.bind(this, sortByOptionValue)}
+                key={sortByOptionValue}>{sortByOption}</li>;
     });
   }
 
