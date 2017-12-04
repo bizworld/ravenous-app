@@ -4,29 +4,7 @@ import './SearchBar.css'; // ./ means they are in the same directory.
 /* To search for businesses (restaurants) in Ravenous, we'll need a search bar.
 We'll implement this with a SearchBar component. */
 
-/* The search bar will communicate with the Yelp API. For now, build part of the
-structure that's needed to communicate with the Yelp API. Specifically, requests
-to the Yelp API must follow formatting and naming conventions set by the API.
-To achieve this, we'll create an object, sortByOptions, with keys and values
-that conform to what the API expects to receive (as shown in the API
-documentation). */
-const sortByOptions = {
-  'Best Match': 'best_match',
-  'Highest Rated': 'rating',
-  'Most Reviewed': 'review_count'
-};
 
-/* Create a method that returns the current CSS class of the sort options,
-returning whether or not each one should be styled as if it has been selected.
-i.e. getSortByClass() returns the current CSS class for a sorting option.
-It will be useful in providing visual feedback to users of Ravenous. */
-function getSortByClass(sortByOption) {
-  if(this.state.sortBy === sortByOption) { // sortByOption or this.sortByOption ?
-    return 'active';
-  } else {
-    return ''; // otherwise, return an empty string
-  }
-}
 
 /* Use the React library to create a component class, SearchBar, with a
 renderSortByOptions() method.
@@ -43,6 +21,19 @@ class SearchBar extends React.Component {
       location: '', // the location to search near from the location input
       sortBy: 'best_match' // represents the selected sorting option to use.
     };
+
+    /* The search bar will communicate with the Yelp API. For now, build part of the
+    structure that's needed to communicate with the Yelp API. Specifically, requests
+    to the Yelp API must follow formatting and naming conventions set by the API.
+    To achieve this, we'll create an object, sortByOptions, with keys and values
+    that conform to what the API expects to receive (as shown in the API
+    documentation). */
+    const sortByOptions = {
+      'Best Match': 'best_match',
+      'Highest Rated': 'rating',
+      'Most Reviewed': 'review_count'
+    };
+
   }
 
   /* A method that sets the state of a sorting option. This method will be
@@ -54,10 +45,25 @@ class SearchBar extends React.Component {
     });
   }
 
+  /* Create a method that returns the current CSS class of the sort options,
+  returning whether or not each one should be styled as if it has been selected.
+  i.e. getSortByClass() returns the current CSS class for a sorting option.
+  It will be useful in providing visual feedback to users of Ravenous. */
+  getSortByClass(sortByOption) {
+    if(this.state.sortBy === sortByOption) {
+      return 'active';
+    } else {
+      return ''; // otherwise, return an empty string
+    }
+  }
+
   renderSortByOptions() {
     return Object.keys(sortByOptions).map(sortByOption => {
       let sortByOptionValue = sortByOptions[sortByOption];
-      return <li key={sortByOptionValue}>{sortByOption}</li>;
+      /* The value of the `className` attribute will conditionally style each sort
+      by option, displaying to the user which sorting option is currently selected. */
+      return <li className={this.getSortByClass(sortByOptionValue)}
+        key={sortByOptionValue}>{sortByOption}</li>;
     });
   }
 
