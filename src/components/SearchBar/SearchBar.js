@@ -22,6 +22,12 @@ class SearchBar extends React.Component {
       sortBy: 'best_match' // represents the selected sorting option to use.
     };
 
+    /*  Since both of these methods use `this` (by calling .setState() on it),
+    bind both methods (handleTermChange() and handleLocationChange()) to the
+    current value of `this`. */
+    this.handleTermChange = this.handleTermChange.bind(this);
+    this.handleLocationChange = this.handleLocationChange.bind(this);
+
     /* The search bar will communicate with the Yelp API. For now, build part of the
     structure that's needed to communicate with the Yelp API. Specifically, requests
     to the Yelp API must follow formatting and naming conventions set by the API.
