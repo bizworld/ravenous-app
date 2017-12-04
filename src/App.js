@@ -5,8 +5,8 @@ import SearchBar from './components/SearchBar/SearchBar.js';
 import BusinessList from './components/BusinessList/BusinessList.js';
 
 /* When the Yelp API is implemented, a list of businesses will be returned to
-App.js. So, we should create a hard-coded list of businesses here and then pass
-them to the appropriate components. */
+App.js (the container component). So, we should create a hard-coded list of
+businesses here and then pass them to the appropriate components. */
 // business (information) object
 const business = {
   imageSrc: 'https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg',
@@ -29,7 +29,7 @@ const businesses = [
   business,
   business
 ];
-
+// container component, parent component
 class App extends Component {
   render() {
     // We won't need the default App component, so we'll make some modifications

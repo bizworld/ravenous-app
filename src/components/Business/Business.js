@@ -2,7 +2,8 @@ import React from 'react'; // import the React library, to build the component, 
 import './Business.css'; // import Business.css (in the same parent directory).
 
 /* Create a Business component class (to produce a React component, Business)
-Using `className` for JSX elements (as opposed to `class` for HTML elements). */
+Using `className` for JSX elements (as opposed to `class` for HTML elements).
+child component */
 class Business extends React.Component {
   render() {
     /* business information e.g. business.imageSrc, now has to be accessed via

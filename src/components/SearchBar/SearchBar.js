@@ -22,6 +22,17 @@ The purpose of renderSortByOptions() is to dynamically create the list items
 needed to display the sort options (Best Match, Highest Rated, Most Reviewed).
 This is to help future proof against potential changes to the Yelp API. */
 class SearchBar extends React.Component {
+  constructor(props) {
+    super(props); // calling the super() method on the 1st line
+
+    // set the initial state of the search bar
+    this.state = {
+      term: '', // the search term located in the search input
+      location: '', // the location to search near from the location input
+      sortBy: 'best_match' // represents the selected sorting option to use.
+    };
+  }
+
   renderSortByOptions() {
     return Object.keys(sortByOptions).map(sortByOption => {
       let sortByOptionValue = sortByOptions[sortByOption];

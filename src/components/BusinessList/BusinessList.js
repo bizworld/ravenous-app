@@ -7,7 +7,7 @@ list of businesses would look like in Ravenous (after querying e.g. the Yelp API
 To help this simulation, <BusinessList /> will make use of the
 <Business /> component repeatedly.
 Create the BusinessList component class (that will produce the <BusinessList />
-component). */
+component). child component */
 class BusinessList extends React.Component {
   render() {
     /* the businesses prop (set in the BusinessList component, in App.js),
