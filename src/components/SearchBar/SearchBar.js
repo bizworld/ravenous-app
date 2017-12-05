@@ -28,6 +28,8 @@ class SearchBar extends React.Component {
     this.handleTermChange = this.handleTermChange.bind(this);
     this.handleLocationChange = this.handleLocationChange.bind(this);
 
+    this.handleSearch = this.handleSearch.bind(this);
+
     /* The search bar will communicate with the Yelp API. For now, build part of the
     structure that's needed to communicate with the Yelp API. Specifically, requests
     to the Yelp API must follow formatting and naming conventions set by the API.
@@ -78,7 +80,7 @@ class SearchBar extends React.Component {
   Build the functionality a search as a result of this click. */
   handleSearch(event) {
     /* call the passed down .searchYelp() method (located on props).
-    Pass in the current state values of term, location, and sortBy as arguments. */ 
+    Pass in the current state values of term, location, and sortBy as arguments. */
     this.props.searchYelp(this.state.term, this.state.location, this.state.sortBy);
     // to prevent the default action of clicking a link from triggering at the end of the method.
     event.preventDefault();
