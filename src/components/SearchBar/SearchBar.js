@@ -72,6 +72,18 @@ class SearchBar extends React.Component {
     });
   }
 
+  /* searchYelp() (in the App component class) will print a message to the
+  console, simulating a search. This will only happen when the "Let's Go" button
+  is clicked.
+  Build the functionality a search as a result of this click. */
+  handleSearch(event) {
+    /* call the passed down .searchYelp() method (located on props).
+    Pass in the current state values of term, location, and sortBy as arguments. */ 
+    this.props.searchYelp(this.state.term, this.state.location, this.state.sortBy);
+    // to prevent the default action of clicking a link from triggering at the end of the method.
+    event.preventDefault();
+  }
+
   /* Create a method that returns the current CSS class of the sort options,
   returning whether or not each one should be styled as if it has been selected.
   i.e. getSortByClass() returns the current CSS class for a sorting option.

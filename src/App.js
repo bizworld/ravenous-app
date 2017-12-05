@@ -33,7 +33,7 @@ const businesses = [
 class App extends Component {
   /* The "Let's Go" button also needs to provide some sort of feedback to the
   user. Build functionality that simulates what a search might look like.
-  (i.e. building partial functionality to simulate a search)
+  (i.e. build partial functionality to simulate a search)
   searchYelp() accepts 3 parameters: term, location, and sortBy. These
   parameters represent the 3 pieces of information we'll send to the Yelp API. */
   searchYelp(term, location, sortBy) {
