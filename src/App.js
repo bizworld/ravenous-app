@@ -31,6 +31,15 @@ const businesses = [
 ];
 // container component, parent component
 class App extends Component {
+  /* The "Let's Go" button also needs to provide some sort of feedback to the
+  user. Build functionality that simulates what a search might look like.
+  (i.e. building partial functionality to simulate a search)
+  searchYelp() accepts 3 parameters: term, location, and sortBy. These
+  parameters represent the 3 pieces of information we'll send to the Yelp API. */
+  searchYelp(term, location, sortBy) {
+    console.log(`Searching Yelp with ${term}, ${location}, ${best_match}`);
+  }
+
   render() {
     // We won't need the default App component, so we'll make some modifications
     /* Add a businesses property to the <BusinessList /> component inside of

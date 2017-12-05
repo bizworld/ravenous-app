@@ -55,7 +55,9 @@ class SearchBar extends React.Component {
   Specifically, it will need to handle changes in "Terms" (businesses) and
   "Location" (location to search in).
   Since both will be related to events being triggered, they both accept event
-  (event object) as an argument. */
+  (event object) as an argument.
+  This functionality will provide feedback to the user when they select a
+  different sorting option. */
   handleTermChange(event) {
     // update the state
     this.setState({
