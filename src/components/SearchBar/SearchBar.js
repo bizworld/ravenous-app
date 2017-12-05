@@ -36,7 +36,7 @@ class SearchBar extends React.Component {
     To achieve this, we'll create an object, sortByOptions, with keys and values
     that conform to what the API expects to receive (as shown in the API
     documentation). */
-    const sortByOptions = {
+    this.sortByOptions = {
       'Best Match': 'best_match',
       'Highest Rated': 'rating',
       'Most Reviewed': 'review_count'
@@ -99,8 +99,8 @@ class SearchBar extends React.Component {
   }
 
   renderSortByOptions() {
-    return Object.keys(sortByOptions).map(sortByOption => {
-      let sortByOptionValue = sortByOptions[sortByOption];
+    return Object.keys(this.sortByOptions).map(sortByOption => {
+      let sortByOptionValue = this.sortByOptions[sortByOption];
       /* The value of the `className` attribute will conditionally style each sort
       by option, displaying to the user which sorting option is currently selected.
       the onClick attribute updates the state of a sorting option when it is clicked.
@@ -119,13 +119,13 @@ class SearchBar extends React.Component {
       <div className="SearchBar">
         <div className="SearchBar-sort-options">
           <ul>
-            {this.renderSortByOptions()}
+            {this.renderSortByOptions()} {/* call the method to get the contents for the element */}
           </ul>
         </div>
         <div className="SearchBar-fields">
           {/* use the handleTermChange() and handleLocationChange() methods */}
           <input placeholder="Search Businesses" onChange={this.handleTermChange}/>
-          <input placeholder="Where?" onChange={this.handleLocationChange}/>
+          <input placeholder="Where?" onChange={this.handleLocationChange}/> {/* without (), to pass the function itself, and not call it, useful setting event handlers */} 
         </div>
         <div className="SearchBar-submit">
           <a onClick={this.handleSearch}>{`Let's Go`}</a>  {/* use handleSearch() */}

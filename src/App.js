@@ -37,7 +37,7 @@ class App extends Component {
   searchYelp() accepts 3 parameters: term, location, and sortBy. These
   parameters represent the 3 pieces of information we'll send to the Yelp API. */
   searchYelp(term, location, sortBy) {
-    console.log(`Searching Yelp with ${term}, ${location}, ${best_match}`);
+    console.log(`Searching Yelp with ${term}, ${location}, ${sortBy}`);
   }
 
   render() {
