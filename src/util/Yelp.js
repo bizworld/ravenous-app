@@ -31,7 +31,20 @@ const Yelp = {
         represent a valid response returned by the Yelp API). */
         if (jsonResponse.businesses) {
           return jsonResponse.businesses.map(business => {
-
+            /* return an object that includes all of the attributes needed to
+            display a business in Ravenous. */
+            {
+              id: business.id,
+              imageSrc: business.image_url,
+              name: business.name,
+              address: business.location.address1,
+              city: business.location.city,
+              state: business.location.state,
+              zipCode: business.location.zip_code,
+              category: business.categories[0].title,
+              rating: business.rating,
+              reviewCount: business.review_count
+            }
           });
 
         }
@@ -40,3 +53,8 @@ const Yelp = {
 
   }
 };
+
+/* Using `default export` (to be consistent with type of export used in Ravenous),
+export the Yelp module to (expose it i.e.) make it available to the rest of the
+Ravenous app. */
+export default Yelp;
