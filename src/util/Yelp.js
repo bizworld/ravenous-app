@@ -6,4 +6,37 @@ const apiKey = 'U3HjMMElPJpzzjF9h-o2TDYsggerqqc9hEcPXJExyuDYoPE7E4IHL7vIQ9T-kJQz
 /* Create a Yelp module
 by 1st creating an empty object, Yelp, that will store the functionality needed
 to interact with the Yelp API. */
-const Yelp = {};
+const Yelp = {
+  // Add the search() method we'll use to retrieve search results from the Yelp API.
+  search: (term, location, sortBy) => {
+    /* This `return` will return a promise that will ultimately resolve to our
+    list of businesses (using JS ES6 string interpolation).
+    Prepend the URL path with the CORS Anywhere API to bypass the CORS restriction. */
+    return fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=${term}&location=${location}&sort_by=${sortBy}`,
+    // browser header (2nd arg. to the fetch() call)
+    {
+      headers: { Authorization: `Bearer ${apiKey}` }
+    }).then(
+      /* a callback function to convert the returned response to JSON for us to
+      be able to effectively utilize our list of businesses. */
+      response => {
+        return response.json();
+      }
+    ).then(
+      /* Chain another .then() call to retrieve the list of businesses from the
+      converted JSON response, passing in a callback function that takes a
+      parameter, jsonResponse. */
+      jsonResponse => {
+        /* check to see if jsonResponse has a businesses key (this would
+        represent a valid response returned by the Yelp API). */
+        if (jsonResponse.businesses) {
+          return jsonResponse.businesses.map(business => {
+
+          });
+
+        }
+      }
+    );
+
+  }
+};
