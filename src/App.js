@@ -7,8 +7,9 @@ import Yelp from './util/Yelp.js'; // import the Yelp module from util folder in
 
 // container component, parent component
 class App extends Component {
+  // you can pass `props` in as an argument, even if you won't use them
   constructor(props) {
-    super(props); // is this code line needed?
+    super(props); // calling the super() method on the 1st line
 
     // Set the initial state using, this.state
     this.state = {
@@ -26,7 +27,16 @@ class App extends Component {
   searchYelp() accepts 3 parameters: term, location, and sortBy. These
   parameters represent the 3 pieces of information we'll send to the Yelp API. */
   searchYelp(term, location, sortBy) {
-    console.log(`Searching Yelp with ${term}, ${location}, ${sortBy}`);
+    /* Once we retrieve our list of businesses, we will need to update the `state`,
+    do this by 1st chaining a then() call to the end of Yelp.search(), passing it
+    a callback function that takes one parameter, businesses. */
+    Yelp.search(term, location, sortBy).then(businesses => { // arrow function syntax
+      // update the state, using setState().
+      this.setState({
+        // the object value, businesses is the returned array of businesses.
+        businesses: businesses
+      });
+    });
   }
 
   render() {
@@ -38,7 +48,7 @@ class App extends Component {
         <h1>ravenous</h1>
         {/* use the searchYelp() method. By adding a searchYelp property to the SearchBar component */}
         <SearchBar searchYelp={this.searchYelp}/>
-        <BusinessList businesses={businesses} />
+        <BusinessList businesses={this.state.businesses} /> {/* this.state, not this.props, since `state` is defined as that empty array. */}
       </div>
     );
   }
