@@ -7,6 +7,19 @@ import Yelp from './util/Yelp.js'; // import the Yelp module from util folder in
 
 // container component, parent component
 class App extends Component {
+  constructor(props) {
+    super(props); // is this code line needed?
+
+    // Set the initial state using, this.state
+    this.state = {
+      businesses: []
+    };
+
+    /* Bind the searchYelp() method to the current value of `this` (since we are
+    about to update searchYelp() to use `this`). */
+    this.searchYelp = this.searchYelp.bind(this);
+  }
+
   /* The "Let's Go" button also needs to provide some sort of feedback to the
   user. Build functionality that simulates what a search might look like.
   (i.e. build partial functionality to simulate a search)
