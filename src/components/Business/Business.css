@@ -50,3 +50,8 @@
   font-size: .88rem;
   line-height: 1rem;
 }
+/* new css code added to improve image positioning. */
+.Business .image-container img {
+  height: 333px;
+  width: 333px;
+}
