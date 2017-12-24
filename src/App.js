@@ -5,31 +5,6 @@ import SearchBar from './components/SearchBar/SearchBar.js';
 import BusinessList from './components/BusinessList/BusinessList.js';
 import Yelp from './util/Yelp.js'; // import the Yelp module from util folder in the same folder as App.js
 
-/* When the Yelp API is implemented, a list of businesses will be returned to
-App.js (the container component). So, we should create a hard-coded list of
-businesses here and then pass them to the appropriate components. */
-// business (information) object
-const business = {
-  imageSrc: 'https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg',
-  name: 'MarginOtto Pizzeria',
-  address: '1010 Paddington Way',
-  city: 'Flavortown',
-  state: 'NY',
-  zipCode: '10101',
-  category: 'Italian',
-  rating: 4.5,
-  reviewCount: 90
-};
-
-// businesses array that holds 6 instances of the business object.
-const businesses = [
-  business,
-  business,
-  business,
-  business,
-  business,
-  business
-];
 // container component, parent component
 class App extends Component {
   /* The "Let's Go" button also needs to provide some sort of feedback to the
