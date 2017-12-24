@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import SearchBar from './components/SearchBar/SearchBar.js';
 import BusinessList from './components/BusinessList/BusinessList.js';
+import Yelp from './util/Yelp.js'; // import the Yelp module from util folder in the same folder as App.js
 
 /* When the Yelp API is implemented, a list of businesses will be returned to
 App.js (the container component). So, we should create a hard-coded list of
