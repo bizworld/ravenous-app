@@ -31,7 +31,7 @@ const Yelp = {
         /* check to see if jsonResponse has a businesses key (this would
         represent a valid response returned by the Yelp API). */
         if (jsonResponse.businesses) {
-          return jsonResponse.businesses.map(business => {
+          return jsonResponse.businesses.map(business => (// using () instead of {} to wrap object literals
             /* return an object that includes all of the attributes needed to
             display a business in Ravenous. */
             {
@@ -46,7 +46,7 @@ const Yelp = {
               rating: business.rating,
               reviewCount: business.review_count
             }
-          });
+          ));
 
         }
       }
